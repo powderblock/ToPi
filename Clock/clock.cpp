@@ -1,8 +1,14 @@
 #include <iostream>
-#include <SDL.h>
-#include <SDL_opengl.h>
 #include <math.h>
 #include <time.h>
+
+#ifdef _WIN32
+#include <SDL/SDL.h>
+#include <SDL_opengl.h>
+#else
+#include <SDL.h>
+#include <SDL_opengl.h>
+#endif
 
 #define UTC (0)
 #define EST (-5)
