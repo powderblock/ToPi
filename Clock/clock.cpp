@@ -1,9 +1,8 @@
 #include <iostream>
-#include <SDL/SDL.h>
-#include <SDL/SDL_opengl.h>
+#include <SDL.h>
+#include <SDL_opengl.h>
 #include <math.h>
 #include <time.h>
-#undef main
 
 #define UTC (0)
 #define EST (-5)
