@@ -4,7 +4,7 @@ EXE = clock.exe
 OBJS = clock.o
 
 # Compiler flags:
-LIBS = $(shell sdl-config --static-lib)
+LIBS = $(shell sdl-config --static-libs)
 FLAGS = $(shell sdl-config --cflags)
 
 # Put it all together and compile to .os:

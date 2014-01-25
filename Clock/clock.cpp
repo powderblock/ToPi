@@ -37,7 +37,7 @@ void init();
 void update();
 void render();
 
-int main(){
+int main(int argc, char *argv[]){
 	SDL_Init(SDL_INIT_EVERYTHING);
 	SDL_GL_SetAttribute(SDL_GL_MULTISAMPLEBUFFERS, 1);
 	SDL_GL_SetAttribute(SDL_GL_MULTISAMPLESAMPLES, 4);
@@ -49,6 +49,7 @@ int main(){
 	while(running){
 		update();
 	}
+	return 0;
 }
 
 void lockFPS(){
@@ -81,7 +82,6 @@ void update(){
 	s = -((ptm->tm_sec * 6) + 270);
 	m = -((ptm->tm_min * 6) + 270);
 	h = -((((ptm->tm_hour + EST) % 24) * 30) + 270);
-	cout << h << endl;
 
 	lockFPS();
 }
