@@ -4,12 +4,13 @@ EXE = clock.exe
 OBJS = clock.o
 
 # Compiler flags:
-LIBS = $(shell sdl-config --static-lib --cflags)
+FLAGS = $(shell sdl-config --cflags)
+LIBS = $(shell sdl-config --static-lib)
 
 # Put it all together and compile to .os:
 $(EXE) : $(OBJS)
-	g++ -o $(EXE) $(OBJS) $(LIBS)
+	g++ -o $(EXE) $(OBJS) $(LIBS) $(FLAGS)
 
 # Compile all .cpps into .os:
 %.o : %.cpp
-	g++ $< -c
+	g++ $< -c $(LIBS) $(FLAGS)

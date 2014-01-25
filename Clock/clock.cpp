@@ -3,7 +3,6 @@
 #include <SDL/SDL_opengl.h>
 #include <math.h>
 #include <time.h>
-#undef main
 
 #define UTC (0)
 #define EST (-5)
