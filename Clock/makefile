@@ -4,7 +4,7 @@ EXE = clock.exe
 OBJS = clock.o
 
 # Compiler flags:
-LIBS = -lmingw32 -lSDLmain -lSDL -lSOIL -lopengl32 -static-libgcc -static-libstdc++
+LIBS = $(shell sdl-config --static-lib --cflags)
 
 # Put it all together and compile to .os:
 $(EXE) : $(OBJS)
