@@ -10,7 +10,7 @@ ifeq ($(UNAME), $(filter $(UNAME),Linux Darwin))
 LIBS = $(shell sdl-config --static-libs)
 FLAGS = $(shell sdl-config --cflags)
 else
-LIBS = #WINDOWS LIBS HERE
+LIBS = -lmingw32 -lSDLMain -lSDL -lopengl32
 FLAGS = #WINDOWS FLAGS HERE
 endif
 
