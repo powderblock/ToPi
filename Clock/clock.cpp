@@ -32,6 +32,7 @@ const float radiusHours = 64;
 GLfloat thick = 3.0;
 
 float s, m, h;
+float seconds, minutes, hours;
 
 bool running = true;
 
@@ -84,10 +85,14 @@ void update(){
 
 	events();
 	render();
-	
-	s = -((ptm->tm_sec * 6) + 270);
-	m = -((ptm->tm_min * 6) + 270);
+	seconds = ptm->tm_sec;
+	minutes = ptm->tm_min;
+	hours = ptm->tm_hour;
+	s = -((seconds * 6) + 270);
+	m = -((minutes * 6) + 270);
+	m -= ((seconds / 60) * 6);
 	h = -((((ptm->tm_hour + EST) % 24) * 30) + 270);
+	h -= ((minutes / 60) * 30);
 
 	lockFPS();
 }
